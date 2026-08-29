@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block main %}
+    <h2>Detalhes do Livro</h2>
+    <div class="cartao-detalhes">
+      <a href="{% url 'livros:listaLivros' %}" class="voltar">&larr; Voltar à lista</a>
+      <ul class="lista-detalhes">
+        <li><span class="rotulo">Título:</span> <span class="valor">{{ livro.titulo }}</span></li>
+        <li><span class="rotulo">Editora:</span> <span class="valor">{{ livro.editora }}</span></li>
+        <li><span class="rotulo">Lançamento:</span> <span class="valor">{{ livro.data_lancamento }}</span></li>
+        <li><span class="rotulo">Resumo:</span> <span class="valor">{{ livro.resumo }}</span></li>
+      </ul>
+    </div>
+{% endblock main %}

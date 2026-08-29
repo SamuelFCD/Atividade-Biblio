@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block main %}
+    <h2>Detalhes do Autor</h2>
+    <div class="cartao-detalhes">
+      <a href="{% url 'livros:listaAutores' %}" class="voltar">&larr; Voltar à lista</a>
+      <ul class="lista-detalhes">
+        <li><span class="rotulo">Nome:</span> <span class="valor">{{ autor.nome }}</span></li>
+        <li><span class="rotulo">Email:</span> <span class="valor">{{ autor.email }}</span></li>
+        <li><span class="rotulo">Ano de Nascimento:</span> <span class="valor">{{ autor.ano_nascimento }}</span></li>
+      </ul>
+    </div>
+{% endblock main %}

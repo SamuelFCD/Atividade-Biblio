@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block main %}
+    <h2>Lista de Livros</h2>
+    <table class="tabela-listagem">
+      <thead>
+        <tr><th>Título</th><th>Editora</th><th>Lançamento</th><th>Detalhes</th></tr>
+      </thead>
+      <tbody>
+        {% for livro in livros %}
+          <tr>
+            <td><a href="{% url 'livros:detalhesLivro' livro.id %}">{{ livro.titulo }}</a></td>
+            <td>{{ livro.editora }}</td>
+            <td>{{ livro.data_lancamento }}</td>
+            <td><a href="{% url 'livros:detalhesLivro' livro.id %}">Detalhes</a></td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock main %}

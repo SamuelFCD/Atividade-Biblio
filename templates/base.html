@@ -4,20 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Biblioteca</title>
+    <link rel="stylesheet" href="{% static 'Livros/style.css' %}">
     {% block links %}{% endblock links %}
 </head>
 <body>
-    <header>
-        <h1>Biblioteca - Desafio Biblio</h1>
-        <nav>
-            <ul>
-                <li><a href="{% url 'acervo:listaLivros' %}">Livros</a></li>
-                <li><a href="{% url 'acervo:listaAutores' %}">Autores</a></li>
-            </ul>
-        </nav>
-    </header>
+    {% include "fragments/_header.html" %}
+
     <main>
         {% block main %}{% endblock main %}
     </main>
+
+    {% include "fragments/_footer.html" %}
 </body>
 </html>
